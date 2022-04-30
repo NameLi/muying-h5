@@ -1,0 +1,16 @@
+/*
+	css 初始化
+	2017.4.20
+*/
+body, ul, ol, li, h1, h2, h3, h4, h5, h6, p, form, th, dd, dl, fieldset, legend, input, textarea, select {margin: 0;padding: 0;}
+
+ul, ol { list-style:none; }
+
+a {text-decoration:none;}
+h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+address, em {font-style:normal} 
+li {list-style:none} 
+img {border:0; vertical-align:middle} 
+table {border-collapse:collapse; border-spacing:0} 
+p {word-wrap:break-word}
+input{outline:none} 

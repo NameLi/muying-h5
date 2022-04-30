@@ -1,0 +1,319 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 1265575 */
+  src: url('iconfont.woff2?t=1650713443187') format('woff2'),
+       url('iconfont.woff?t=1650713443187') format('woff'),
+       url('iconfont.ttf?t=1650713443187') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-comment:before {
+  content: "\e63d";
+}
+
+.icon-like:before {
+  content: "\e816";
+}
+
+.icon-sound:before {
+  content: "\e6ea";
+}
+
+.icon-question-fill:before {
+  content: "\e602";
+}
+
+.icon-question:before {
+  content: "\e65b";
+}
+
+.icon-see-close:before {
+  content: "\eb45";
+}
+
+.icon-egg:before {
+  content: "\e61e";
+}
+
+.icon-egg2:before {
+  content: "\e8ac";
+}
+
+.icon-paused:before {
+  content: "\e61b";
+}
+
+.icon-min:before {
+  content: "\e687";
+}
+
+.icon-max:before {
+  content: "\e69a";
+}
+
+.icon-play1:before {
+  content: "\e623";
+}
+
+.icon-back:before {
+  content: "\e656";
+}
+
+.icon-arrow-dislike:before {
+  content: "\e912";
+}
+
+.icon-comment-fill:before {
+  content: "\e620";
+}
+
+.icon-video:before {
+  content: "\e61a";
+}
+
+.icon-play:before {
+  content: "\e616";
+}
+
+.icon-comment-2:before {
+  content: "\e609";
+}
+
+.icon-arrow-like:before {
+  content: "\e61d";
+}
+
+.icon-to-max:before {
+  content: "\e610";
+}
+
+.icon-to-min:before {
+  content: "\e6ab";
+}
+
+.icon-refresh:before {
+  content: "\e615";
+}
+
+.icon-location:before {
+  content: "\e66c";
+}
+
+.icon-tag:before {
+  content: "\e6c8";
+}
+
+.icon-category:before {
+  content: "\e60d";
+}
+
+.icon-xiangzuo:before {
+  content: "\e6b0";
+}
+
+.icon-see:before {
+  content: "\e693";
+}
+
+.icon-like-1:before {
+  content: "\e63a";
+}
+
+.icon-feed:before {
+  content: "\e601";
+}
+
+.icon-close:before {
+  content: "\e612";
+}
+
+.icon-send-fill:before {
+  content: "\e600";
+}
+
+.icon-delete:before {
+  content: "\e614";
+}
+
+.icon-confirm:before {
+  content: "\e618";
+}
+
+.icon-movie:before {
+  content: "\e60e";
+}
+
+.icon-unknown:before {
+  content: "\e646";
+}
+
+.icon-send:before {
+  content: "\e71b";
+}
+
+.icon-arrow-left:before {
+  content: "\e63f";
+}
+
+.icon-date:before {
+  content: "\e6c4";
+}
+
+.icon-close-fill:before {
+  content: "\e637";
+}
+
+.icon-girl:before {
+  content: "\e635";
+}
+
+.icon-boy:before {
+  content: "\e634";
+}
+
+.icon-set:before {
+  content: "\e65e";
+}
+
+.icon-news:before {
+  content: "\e708";
+}
+
+.icon-aboutus:before {
+  content: "\e655";
+}
+
+.icon-trophy:before {
+  content: "\e668";
+}
+
+.icon-notice:before {
+  content: "\e657";
+}
+
+.icon-edit:before {
+  content: "\e60b";
+}
+
+.icon-sending:before {
+  content: "\e61c";
+}
+
+.icon-article-fill:before {
+  content: "\e650";
+}
+
+.icon-jubao1:before {
+  content: "\e621";
+}
+
+.icon-video-fill:before {
+  content: "\e617";
+}
+
+.icon-share:before {
+  content: "\e608";
+}
+
+.icon-cate:before {
+  content: "\e60f";
+}
+
+.icon-gengduo:before {
+  content: "\e69b";
+}
+
+.icon-love:before {
+  content: "\e60a";
+}
+
+.icon-movie-fill:before {
+  content: "\e636";
+}
+
+.icon-up:before {
+  content: "\e70f";
+}
+
+.icon-category-fill:before {
+  content: "\e701";
+}
+
+.icon-actor:before {
+  content: "\e654";
+}
+
+.icon-jifen:before {
+  content: "\e629";
+}
+
+.icon-see-fill:before {
+  content: "\e639";
+}
+
+.icon-arrow-right:before {
+  content: "\e906";
+}
+
+.icon-search:before {
+  content: "\e613";
+}
+
+.icon-star:before {
+  content: "\e611";
+}
+
+.icon-zixun:before {
+  content: "\e643";
+}
+
+.icon-level:before {
+  content: "\e67b";
+}
+
+.icon-more:before {
+  content: "\e85c";
+}
+
+.icon-like-fill:before {
+  content: "\e669";
+}
+
+.icon-home:before {
+  content: "\e908";
+}
+
+.icon-user:before {
+  content: "\e909";
+}
+
+.icon-down:before {
+  content: "\e90c";
+}
+
+.icon-share2:before {
+  content: "\e63b";
+}
+
+.icon-hot-fill:before {
+  content: "\e90f";
+}
+
+.icon-plus:before {
+  content: "\e64f";
+}
+
+.icon-check-fill:before {
+  content: "\e77c";
+}
+
+.icon-star-fill:before {
+  content: "\e911";
+}
+
