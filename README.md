@@ -10,6 +10,8 @@
 
 接口文档：[https://doc.ixook.com](https://doc.ixook.com/doc/movie-mobile-test/api?api=readme)
 
+开发文档：[https://h5-doc.ixook.com](https://h5-doc.ixook.com)
+
 
 ## 脑图
 ![慕影H5.png](https://note-file.ixook.com/FqtgheEZr7IgaYEHyGwBQ-M1ipBV)
