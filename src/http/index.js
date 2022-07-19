@@ -2,8 +2,7 @@ import axios from 'axios'
 import store from '@/store'
 import router from '@/router'
 import { HOST } from '@/config'
-import MindUI from 'mind-ui-vue'
-const Toast = MindUI.Toast
+import { Toast } from 'mind-ui-vue'
 
 // axios 配置
 axios.defaults.timeout = 20000

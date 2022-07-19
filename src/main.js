@@ -2,10 +2,14 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import './assets/styles/index.css'
-import 'mind-ui-vue/lib/mind-ui-vue.css';
 import { APP_NAME } from './config'
 
+import './assets/styles/index.css'
+import 'mind-ui-vue/lib/index.css';
+
+// UI 组件库
+import MindUI from 'mind-ui-vue'
+Vue.use(MindUI)
 
 // px2rem
 import 'lib-flexible/flexible'
@@ -15,9 +19,6 @@ import infiniteScroll from "./directive/infinite-scroll";
 Vue.use(infiniteScroll)
 
 
-// UI 组件库
-import MindUI from 'mind-ui-vue'
-Vue.use(MindUI)
 
 // 懒加载
 import VueLazyload from 'vue-lazyload'

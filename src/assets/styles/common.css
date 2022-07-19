@@ -96,6 +96,12 @@ body {
     }
 }
 
+@media (max-width: 800px) {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
+
 .ellipsis {
     overflow: hidden;
     text-overflow: ellipsis;
