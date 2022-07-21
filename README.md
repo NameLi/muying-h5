@@ -24,7 +24,7 @@
 - `sass`
 - `axios.js` [基于 promise 的 HTTP 库](https://www.kancloud.cn/yunye/axios/234845) 
 - `iconfont` [阿里字体图标库](https://www.iconfont.cn/)
-- `mind-ui-vue` [个人为本项目制作的`vue`移动端组件库](https://mind-ui.ixook.com/) 
+- `mind-ui-vue` [个人为本项目制作的`vue`移动端组件库](https://mind-ui-vue.ixook.com/docs) 
 - `lib-flexible` [移动端自适应方案](https://github.com/amfe/lib-flexible)
 - `cropperjs` [图片裁剪](https://github.com/fengyuanchen/cropperjs)
 - `echarts` [百度图表插件](https://echarts.apache.org/zh/index.html)
