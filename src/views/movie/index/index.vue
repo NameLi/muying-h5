@@ -38,7 +38,9 @@ export default {
   },
 
   activated() {
-    this.isLock = false;
+    setTimeout(() => {
+      this.isLock = false;
+    }, 0)
   },
 
   deactivated() {

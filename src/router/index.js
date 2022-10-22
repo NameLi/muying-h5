@@ -112,11 +112,13 @@ const routes = [
     name: "Forget",
     component: () => import('@/views/account/forget')
   },
+  // 离线
   {
     path: '/offline',
     name: "Offline",
     component: () => import('@/views/offline')
   },
+  // 页面未找到
   {
     path: '*',
     name: "NotFound",
@@ -128,7 +130,22 @@ const router = new VueRouter({
   linkActiveClass: 'is-active',
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: to.meta.scrollY }
+    }
+  }
+})
+
+router.beforeEach((to, from, next) => {
+  if (from.meta.scrollY !== undefined) {
+    from.meta.scrollY = window.scrollY;
+  }
+
+  next()
 })
 
 export default router

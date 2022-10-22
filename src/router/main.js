@@ -8,21 +8,25 @@ export default [
       {
         path: '/home',
         name: "Home",
+        meta: { scrollY: 0 },
         component: () => import('@/views/home/index')
       },
       {
         path: '/movies',
         name: "Movies",
+        meta: { scrollY: 0 },
         component: () => import('@/views/movie/index/index')
       },
       {
         path: '/videos',
         name: "Videos",
+        meta: { scrollY: 0 },
         component: () => import('@/views/video/index/index')
       },
       {
         path: '/profile',
         name: "Profile",
+        meta: { scrollY: 0 },
         component: () => import('@/views/profile/index/index'),
         children: [
           {

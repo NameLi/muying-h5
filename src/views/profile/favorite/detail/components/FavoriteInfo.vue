@@ -30,10 +30,10 @@
       @cancel="visible = false"
       @click="handleClickItem"
     >
-      <view slot="header">
-        <view>确定吗？</view>
+      <div slot="header">
+        <div>确定吗？</div>
         <text>删除后无法恢复哦</text>
-      </view>
+      </div>
     </m-action-sheet>
   </div>
 </template>

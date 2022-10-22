@@ -169,7 +169,7 @@ export default {
       }, 25);
     },
 
-    // 范湖上一页
+    // 返回上一页
     goBack() {
       if (typeof this.beforeBack === "function") {
         this.beforeBack(this.back);

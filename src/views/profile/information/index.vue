@@ -66,12 +66,6 @@ import { updateUserInfo } from "@/api/user";
 export default {
   name: "Information",
 
-  computed: {
-    ...mapGetters({
-      user: "user/getUser",
-    }),
-  },
-
   data() {
     return {
       isShowUsername: false,
@@ -89,6 +83,12 @@ export default {
         },
       ],
     };
+  },
+
+  computed: {
+    ...mapGetters({
+      user: "user/getUser",
+    }),
   },
 
   methods: {

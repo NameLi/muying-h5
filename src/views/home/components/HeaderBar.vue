@@ -109,11 +109,6 @@ export default {
     .search {
       background-color: #e5e5e5;
     }
-    .message {
-      .m-icon {
-        color: #999 !important;
-      }
-    }
   }
   .search {
     flex: 1;
@@ -132,13 +127,6 @@ export default {
       flex: 1;
       font-size: 28px;
     }
-  }
-  .message {
-    margin-left: 20px;
-    width: 80px;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
   }
 }
 </style>

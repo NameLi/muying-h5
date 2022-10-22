@@ -146,7 +146,7 @@ export default {
     border-top: 1px solid #e5e5e5;
     display: flex;
     align-items: center;
-    justify-content: right;
+    justify-content: flex-end;
     color: #999;
     height: 70px;
     .better-item {

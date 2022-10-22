@@ -117,14 +117,14 @@ export default {
   methods: {
     async getCategories() {
       this.loading = true;
-      let res = await getCategories();
+      const { code, data } = await getCategories();
       this.loading = false;
 
-      if (res.code === 200) {
-        this.navList = res.data;
-        this.categories = res.data.categories;
-        this.countries = [{ name: "全部" }, ...res.data.countries];
-        this.years = [{ name: "全部" }, ...res.data.years];
+      if (code === 200) {
+        this.navList = data;
+        this.categories = data.categories;
+        this.countries = [{ name: "全部" }, ...data.countries];
+        this.years = [{ name: "全部" }, ...data.years];
       }
     },
 

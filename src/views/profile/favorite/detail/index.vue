@@ -35,12 +35,7 @@
       show-cancel
       @cancel="visible = false"
       @click="handleClickItem"
-    >
-      <view slot="header">
-        <view>确定吗？</view>
-        <text>删除后无法恢复哦</text>
-      </view>
-    </m-action-sheet>
+    />
 
     <transition name="layer">
       <router-view :favorite="favorite" @on-change="favoriteChange" />
@@ -134,6 +129,7 @@ export default {
           );
           if (index > -1) {
             this.list.splice(index, 1);
+            this.favorite.count = --this.favorite.count;
           }
 
           this.visible = false;
