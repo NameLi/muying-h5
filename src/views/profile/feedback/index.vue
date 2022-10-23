@@ -20,6 +20,8 @@
       <m-button
         type="primary"
         class="submit"
+        color="#fff"
+        bgcolor="#e54847"
         :loading="submitLoading"
         @click="submit()"
         >提 交</m-button

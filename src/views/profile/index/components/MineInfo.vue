@@ -16,7 +16,9 @@
 
       <div class="user-intro">
         <div class="user-name">{{ user.username }}</div>
-        <div class="user-signature">{{ user.signature }}</div>
+        <div class="user-signature" v-if="user.signature">
+          {{ user.signature }}
+        </div>
       </div>
     </div>
 
@@ -26,12 +28,6 @@
       </div>
       <div class="login-btn" @click="$router.push(`/login`)">立即登录</div>
     </div>
-
-    <!-- <div class="iconfont icon-news icon-tool"></div> -->
-    <div
-      class="iconfont icon-set icon-tool"
-      @click="$router.push(`/profile/setting`)"
-    ></div>
   </div>
 </template>
 
@@ -74,21 +70,21 @@ export default {
   align-items: center;
   .user-avatar {
     position: relative;
-    width: 130px;
-    height: 130px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     box-shadow: 0 0 0 3px #fff;
     background-color: #fff;
     > img {
-      width: 130px;
-      height: 130px;
+      width: 110px;
+      height: 110px;
       object-fit: cover;
       border-radius: 50%;
     }
     .user-sex {
       position: absolute;
       right: 0px;
-      bottom: 6px;
+      bottom: 0px;
       font-size: 24px;
       width: 32px;
       height: 32px;
@@ -110,7 +106,11 @@ export default {
     color: #fff;
     .user-name {
       font-size: 36px;
-      font-weight: bold;
+      font-weight: 600;
+    }
+    .user-signature {
+      margin-top: 5px;
+      color: #eee;
     }
   }
   .login-btn {

@@ -10,8 +10,8 @@
         </m-cell>
         <m-cell title="使用组件" value="mind-ui-vue" />
         <m-cell title="组件文档">
-          <a class="link" href="https://mind-ui.ixook.com" target="_black"
-            >https://mind-ui.ixook.com</a
+          <a class="link" href="https://mind-ui-vue.ixook.com" target="_black"
+            >https://mind-ui-vue.ixook.com</a
           >
         </m-cell>
         <m-cell title="QQ群" value="577133021" />

@@ -4,14 +4,22 @@ export default [
   {
     path: '/profile/favorites',
     name: "ProfileFavorites",
-    component: () => import('@/views/profile/favorite/index')
+    component: () => import('@/views/profile/favorite/index'),
+    children: [
+      {
+        path: '/profile/favorites/create',
+        props: true,
+        name: "ProfileFavoriteCreate",
+        component: () => import('@/views/profile/favorite/create/index')
+      },
+    ]
   },
-  {
-    path: '/profile/favorites/create',
-    props: true,
-    name: "ProfileFavoriteCreate",
-    component: () => import('@/views/profile/favorite/create/index')
-  },
+  // {
+  //   path: '/profile/favorites/create',
+  //   props: true,
+  //   name: "ProfileFavoriteCreate",
+  //   component: () => import('@/views/profile/favorite/create/index')
+  // },
   {
     path: '/profile/favorites/:id',
     props: true,

@@ -7,7 +7,6 @@
       :title="role.name"
       :subtitle="role.name_en"
       :poster="role.avatar"
-      :end-top="140"
     >
       <div
         v-if="!loading"
@@ -19,7 +18,7 @@
       </div>
     </header-scroll-bar>
 
-    <div class="role-info">
+    <div class="role-info" :style="ImageH" @click="showFullAvatar()">
       <template v-if="!isDefaultPoster">
         <div class="role-avatar" :style="bgImage"></div>
         <div
@@ -37,9 +36,9 @@
 
       <div
         v-if="!loading"
-        class="role-save"
-        :class="{ 'is-save': role.is_collection }"
-        @click="focusRole()"
+        class="role-focus"
+        :class="{ 'is-focus': role.is_collection }"
+        @click.stop="focusRole()"
       >
         {{ role.is_collection ? "已收藏" : "收藏" }}
       </div>
@@ -142,6 +141,9 @@ export default {
         actor_count: 0,
         info: "",
       },
+      isShowFullAvatar: false,
+      defaultHeight: "",
+      maxHeight: "",
       transition: "layer",
     };
   },
@@ -159,14 +161,20 @@ export default {
         "larger"
       )}')`;
     },
+    ImageH() {
+      const H = this.isShowFullAvatar ? this.maxHeight : this.defaultHeight;
+      return H ? `height: ${H}` : "";
+    },
   },
 
   created() {
     document.title = "角色";
+    this.getRole();
   },
 
   mounted() {
-    this.getRole();
+    this.defaultHeight =
+      document.querySelector(".role-info").offsetHeight + "px";
   },
 
   beforeRouteUpdate(to, from, next) {
@@ -185,21 +193,23 @@ export default {
     // 获取角色信息
     async getRole() {
       this.loading = true;
-      const res = await getRole(this.id);
+      const { code, data } = await getRole(this.id);
       this.loading = false;
 
-      if (res.code === 200) {
-        this.role = res.data;
+      if (code === 200) {
+        this.role = data;
 
         //
         let infos = [];
-        for (let item of res.data.defaults) {
+        for (let item of data.defaults) {
           if (["外文名", "性别", "生日"].includes(item.label) && item.value) {
             infos.push(item.value);
           }
         }
 
         this.role.info = infos.join(" · ");
+
+        this.getAvatarInfo(data.avatar);
       }
     },
 
@@ -218,6 +228,23 @@ export default {
         this.role.collection_count = data.collection_count;
         this.$message.success(message);
       }
+    },
+
+    // 获取角色封面图片长宽，用于点击查看大图
+    getAvatarInfo(url) {
+      let img = new Image();
+      img.src = url;
+      img.onload = () => {
+        const windowW = document.body.offsetWidth;
+        const { width, height } = img;
+        const maxHeight = Math.floor((height * windowW) / width);
+        this.maxHeight = maxHeight + "px";
+      };
+    },
+
+    // 显示全图
+    showFullAvatar() {
+      this.isShowFullAvatar = !this.isShowFullAvatar;
     },
   },
 };
@@ -243,6 +270,7 @@ export default {
     position: relative;
     height: 460px;
     background-color: rgba($color-theme, 0.85);
+    transition: height 0.2s;
     .role-avatar {
       height: 100%;
       background-size: cover;
@@ -254,10 +282,9 @@ export default {
       left: 0;
       top: 0;
       width: 100%;
-      height: 460px;
     }
 
-    .role-save {
+    .role-focus {
       position: absolute;
       right: 20px;
       bottom: 60px;
@@ -267,7 +294,7 @@ export default {
       line-height: 56px;
       border-radius: 100px;
       background-color: rgba(#fff, 0.25);
-      &.is-save {
+      &.is-focus {
         background-color: rgba($color-theme, 0.3);
       }
     }

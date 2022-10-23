@@ -27,6 +27,7 @@
           />
           <span>{{ movie.rating }}</span>
         </div>
+        <div class="movie-subtitle" v-else v-html="movie.title_original"></div>
       </template>
 
       <!-- 想看/评分 -->
@@ -289,7 +290,7 @@ export default {
         : this.movie.poster;
     },
     bgStyle() {
-      return `background: linear-gradient(35deg, ${this.movie.bgcolor}, ${this.movie.bgcolor}a6);`;
+      return `background: linear-gradient(35deg, ${this.movie.bgcolor}, ${this.movie.bgcolor}e0);`;
     },
     hasExtra() {
       return (
@@ -453,6 +454,13 @@ export default {
     .article-item {
       padding: 20px 0;
     }
+  }
+  .movie-subtitle {
+    font-size: 24px;
+    max-width: 360px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 .info-wrapper {

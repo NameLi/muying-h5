@@ -1,7 +1,7 @@
 <template>
   <div class="article">
     <header-bar>
-      <div class="header-author" v-if="isShowHeaderAuthor">
+      <div class="header-author" :class="{ 'is-show': isShowHeaderAuthor }">
         <img class="header-author-avatar" :src="author.avatar" alt="" />
         <div class="header-author-name">{{ author.username }}</div>
       </div>
@@ -176,10 +176,17 @@ export default {
 <style scoped lang="scss">
 .article {
   padding-bottom: 40px;
-  ::v-deep .header-author {
+  .header-author {
     display: flex;
     align-items: center;
     height: 100px;
+    opacity: 0;
+    transition: all 0.2s;
+    transform: translateY(40px);
+    &.is-show {
+      opacity: 1;
+      transform: translateY(0);
+    }
     &-avatar {
       width: 40px;
       border-radius: 50%;

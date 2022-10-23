@@ -53,17 +53,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.tabs__wrap {
+.m-tabs__wrap {
   height: 58px;
   border-radius: 60px;
   box-sizing: content-box;
   vertical-align: middle;
   background-color: #f5f5f5;
-  ::v-deep .tabs__scroll {
-    .tabs__nav {
+  ::v-deep .m-tabs__scroll {
+    .m-tabs__nav {
       margin: 6px 2px;
       height: 46px;
-      .tabs__line {
+      .m-tabs__line {
         z-index: 1;
         margin-left: -15px;
         border-left: 15px solid #fff;
@@ -74,19 +74,19 @@ export default {
         border-radius: 50px;
         box-sizing: content-box;
       }
-      .tabs__item {
+      .m-tab-item {
         display: flex;
         align-items: center;
         justify-content: center;
         margin: 0 6px;
         padding: 0 15px;
         height: 46px;
-        &.tab__item--is-active {
-          .tabs__item__content {
+        &.m-tab-item--is-active {
+          .m-tab-item__content {
             color: #333;
           }
         }
-        .tabs__item__content {
+        .m-tab-item__content {
           z-index: 1;
           position: relative;
           margin: 0;

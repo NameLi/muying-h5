@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <header-bar transparent />
+    <header-scroll-bar :title="serial.name" :subtitle="`共${serial.count}部`" />
 
     <!-- 系列信息 -->
     <serial-info :serial="serial" />

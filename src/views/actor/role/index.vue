@@ -12,7 +12,7 @@
     </div>
 
     <div class="role-list" v-infinite-scroll="loadMore">
-      <role-row v-for="role in list" :key="role.id" :role="role" />
+      <role-item v-for="role in list" :key="role.id" :role="role" />
 
       <m-loadmore :loading="loading" v-if="!isShowSkeleton" />
     </div>
@@ -32,11 +32,16 @@ export default {
 
   methods: {
     onChange(value) {
+      if (!this.form.sortby) {
+        this.form.sortby = "hot";
+        return;
+      }
+
       if (this.form.sortby === value) return;
 
       this.page = 1;
       this.list = [];
-      this.form.sobtBy = value;
+      this.form.sortby = value;
       this.loadMore();
     },
 
@@ -62,24 +67,6 @@ export default {
   font-size: 28px;
   .role-count {
     font-weight: bold;
-  }
-}
-
-.role-list {
-  padding: 20px 0;
-  margin-left: 15px;
-  font-size: 0;
-  ::v-deep .role-row {
-    width: 220px;
-    margin: 0 10px;
-    padding-bottom: 30px;
-    .role-avatar {
-      position: relative;
-      width: 100%;
-      height: 320px;
-      overflow: hidden;
-      border-radius: 6px;
-    }
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="movie-item" @click="pathTo()">
+  <div class="movie-item border_bottom" @click="pathTo()">
     <div class="poster-wrapper">
       <img v-lazy="movie.poster" class="img-cover" />
       <div class="sort" v-if="index">
@@ -34,7 +34,7 @@
       </div>
       <div class="info-item ellipsis">{{ movie.genres }}</div>
       <div class="info-item ellipsis">{{ movie.countries }}</div>
-      <slot></slot>
+      <slot />
     </div>
   </div>
 </template>

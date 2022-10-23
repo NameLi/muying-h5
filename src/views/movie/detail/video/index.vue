@@ -85,17 +85,17 @@ export default {
 </script>
 
 <style scoped lang="scss">
-::v-deep .tabs__wrap {
+::v-deep .m-tabs__wrap {
   border-bottom: 1px solid #e5e5e5;
-  .tabs__line {
+  .m-tabs__line {
     height: 8px !important;
   }
-  .tabs__nav {
+  .m-tabs__nav {
     display: block;
-    .tabs__item {
+    .m-tab-item {
       display: inline-block;
       font-weight: bold;
-      .tabs__item__text {
+      .m-tab-item__text {
         transition: all 0.2s;
       }
     }

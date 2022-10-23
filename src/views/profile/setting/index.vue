@@ -2,7 +2,7 @@
   <page>
     <header-bar title="设置" />
 
-    <m-cell-group>
+    <m-cell-group border>
       <m-cell title="应用名称" :value="APP_NAME" />
       <m-cell title="开发者" :value="DEVELOPER" />
       <m-cell title="版本" :value="VERSION" />

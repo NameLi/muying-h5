@@ -54,9 +54,9 @@ export default {
 <style scoped lang="scss">
 .video-item {
   display: flex;
-  margin: 0 30px;
-  padding: 30px 0;
+  padding: 30px;
   border-bottom: 1px solid #f5f5f5;
+  background-color: #fff;
   .video-content {
     position: relative;
     border-radius: 4px;

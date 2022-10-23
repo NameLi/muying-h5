@@ -7,7 +7,6 @@
       :title="actor.name"
       :subtitle="actor.name_en"
       :poster="actor.avatar"
-      :end-top="140"
     >
       <div
         v-if="!loading"
@@ -19,7 +18,7 @@
       </div>
     </header-scroll-bar>
 
-    <div class="actor-info">
+    <div class="actor-info" :style="ImageH" @click="showFullAvatar()">
       <template v-if="!isDefaultPoster">
         <div class="actor-avatar" :style="bgImage"></div>
         <div
@@ -45,7 +44,7 @@
         v-if="!loading"
         class="actor-focus"
         :class="{ 'is-focus': actor.is_collection }"
-        @click="focusActor()"
+        @click.stop="focusActor()"
       >
         {{ actor.is_collection ? "已关注" : "关注" }}
       </div>
@@ -150,6 +149,9 @@ export default {
         photos: [],
         works: [],
       },
+      isShowFullAvatar: false,
+      defaultHeight: "",
+      maxHeight: "",
       transition: "layer",
     };
   },
@@ -167,6 +169,10 @@ export default {
         "larger"
       )}')`;
     },
+    ImageH() {
+      const H = this.isShowFullAvatar ? this.maxHeight : this.defaultHeight;
+      return H ? `height: ${H}` : "";
+    },
   },
 
   created() {
@@ -180,6 +186,11 @@ export default {
     }
 
     this.getActor();
+  },
+
+  mounted() {
+    this.defaultHeight =
+      document.querySelector(".actor-info").offsetHeight + "px";
   },
 
   beforeRouteUpdate(to, from, next) {
@@ -197,12 +208,13 @@ export default {
   methods: {
     async getActor() {
       this.loading = true;
-      const res = await getActor(this.id);
+      const { code, data } = await getActor(this.id);
       this.loading = false;
 
-      if (res.code === 200) {
-        this.actor = res.data;
-        document.title = res.data.name;
+      if (code === 200) {
+        this.actor = data;
+        document.title = data.name;
+        this.getAvatarInfo(data.avatar);
       }
     },
 
@@ -221,6 +233,23 @@ export default {
         this.actor.collection_count = data.collection_count;
         this.$message.success(message);
       }
+    },
+
+    // 获取影人封面图片长宽，用于点击查看大图
+    getAvatarInfo(url) {
+      let img = new Image();
+      img.src = url;
+      img.onload = () => {
+        const windowW = document.body.offsetWidth;
+        const { width, height } = img;
+        const maxHeight = Math.floor((height * windowW) / width);
+        this.maxHeight = maxHeight + "px";
+      };
+    },
+
+    // 显示全图
+    showFullAvatar() {
+      this.isShowFullAvatar = !this.isShowFullAvatar;
     },
   },
 };
@@ -247,6 +276,7 @@ export default {
     position: relative;
     height: 460px;
     background-color: rgba($color-theme, 0.85);
+    transition: height 0.2s;
     .actor-avatar {
       height: 100%;
       background-size: cover;
@@ -258,7 +288,6 @@ export default {
       left: 0;
       top: 0;
       width: 100%;
-      height: 460px;
     }
 
     .actor-focus {

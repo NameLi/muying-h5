@@ -12,7 +12,7 @@
     </div>
 
     <div class="panel-content" :class="{ 'scroll-x': scrollX }">
-      <slot></slot>
+      <slot />
     </div>
   </div>
 </template>

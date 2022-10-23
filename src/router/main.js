@@ -40,6 +40,11 @@ export default [
             component: () => import('@/views/profile/feedback')
           },
           {
+            path: '/profile/changelog',
+            name: "ChangeLog",
+            component: () => import('@/views/profile/changelog')
+          },
+          {
             path: '/profile/author',
             name: "AboutAuthor",
             component: () => import('@/views/profile/aboutus/author')

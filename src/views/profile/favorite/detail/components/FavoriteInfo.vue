@@ -29,12 +29,7 @@
       show-cancel
       @cancel="visible = false"
       @click="handleClickItem"
-    >
-      <div slot="header">
-        <div>确定吗？</div>
-        <text>删除后无法恢复哦</text>
-      </div>
-    </m-action-sheet>
+    />
   </div>
 </template>
 

@@ -34,7 +34,11 @@
       </div>
 
       <!-- 内容 -->
-      <div class="review-content" style="font-size: 16px;" v-html="review.content"></div>
+      <div
+        class="review-content"
+        style="font-size: 16px"
+        v-html="review.content"
+      ></div>
 
       <!-- 影评版权信息 -->
       <div class="copyright">{{ review.copyright_zh }}</div>
@@ -48,7 +52,7 @@
     <tool-bar
       type="reviews"
       :data="review"
-      v-if="!loading && review.from === 'muying'"
+      v-if="!loading && (!review.from || review.from === 'muying')"
     >
       <template v-slot:left>
         <tool-vote :review="review" />

@@ -14,8 +14,12 @@
       </div>
     </div>
 
+    <div class="save-header">
+      <div class="count">{{ total }}个收藏夹</div>
+      <div class="create-btn" @click="showCreatePage">新建收藏夹</div>
+    </div>
+
     <!-- 收藏夹列表 -->
-    <div class="collection-count" v-if="total">{{ total }}个收藏夹</div>
     <div class="save-list">
       <div
         class="save-item"
@@ -23,8 +27,6 @@
         :key="item.id"
         @click="$router.push(`/profile/favorites/${item.id}`)"
       >
-        <!-- <img class="save-poster" :src="item.poster" /> -->
-
         <div class="save-content">
           <div class="save-title">{{ item.name }}</div>
           <div class="save-info">{{ item.count }}个内容</div>
@@ -40,6 +42,10 @@
         >？
       </div>
     </no-data>
+
+    <transition name="layer">
+      <router-view />
+    </transition>
   </div>
 </template>
 
@@ -67,6 +73,10 @@ export default {
   },
 
   methods: {
+    showCreatePage() {
+      this.$router.push(`/profile/favorites/create`);
+    },
+
     async getUserFavorites() {
       this.loading = true;
       let res = await getUserFavorites();
@@ -119,12 +129,28 @@ export default {
       }
     }
   }
-  .collection-count {
+
+  .save-header {
+    z-index: 1;
+    position: sticky;
+    left: 0;
+    top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 0 30px;
-    height: 48px;
-    line-height: 48px;
-    color: #999;
+    height: 68px;
     background-color: #f5f5f5;
+
+    .count {
+      color: #999;
+      font-size: 24px;
+    }
+
+    .create-btn {
+      color: $color-theme;
+    }
   }
 
   .save-list {

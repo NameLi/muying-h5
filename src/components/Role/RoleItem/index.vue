@@ -1,5 +1,5 @@
 <template>
-  <div class="role-item" @click="pathToRole()">
+  <div class="role-item border_bottom" @click="pathToRole()">
     <img class="role-avatar" v-lazy="role.avatar" />
 
     <div class="role-info">

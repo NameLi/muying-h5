@@ -35,15 +35,18 @@
         title="关于项目"
         url="/profile/project"
       />
-      <m-cell icon="edit" icon-color="#ffbe10" title="更新日志">
-        <a
-          class="log"
-          href="https://napi.ixook.com/articles/148"
-          target="_blanl"
-        >
-          <m-icon name="arrow-right" color="#999" size="32"></m-icon>
-        </a>
-      </m-cell>
+      <m-cell
+        icon="edit"
+        icon-color="#ffbe10"
+        title="更新日志"
+        url="/profile/changelog"
+      />
+      <m-cell
+        icon="set"
+        icon-color="#ffbe10"
+        title="设置"
+        url="/profile/setting"
+      />
     </m-cell-group>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div class="serial-item" @click="pathToSerial()">
+  <div class="serial-item border_bottom" @click="pathToSerial()">
     <image-group :images="photos" />
 
     <div class="serial-info">
