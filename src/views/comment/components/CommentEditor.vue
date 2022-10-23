@@ -134,10 +134,10 @@ export default {
       };
 
       this.submitLoading = true;
-      let res = await createComment(this.type, this.id, params);
+      const { code, data } = await createComment(this.type, this.id, params);
       this.submitLoading = false;
 
-      if (res.code === 200) {
+      if (code === 200) {
         this.$toast({
           position: "top",
           message: "评论成功",

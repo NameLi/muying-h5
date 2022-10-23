@@ -125,14 +125,14 @@ export default {
   methods: {
     async getIndex() {
       this.loading = true;
-      const res = await getIndex();
+      const { code, data } = await getIndex();
 
-      if (res.code === 200) {
-        this.swipers = res.data.swiper;
-        this.articles = res.data.article.data;
-        this.comings = res.data.coming;
-        this.theaters = res.data.theater;
-        this.todays = res.data.today;
+      if (code === 200) {
+        this.swipers = data.swiper;
+        this.articles = data.article.data;
+        this.comings = data.coming;
+        this.theaters = data.theater;
+        this.todays = data.today;
       }
 
       this.onSwiperIndexChange(0);

@@ -72,12 +72,12 @@ export default {
 
     async getMovieVideos() {
       this.loading = true;
-      let res = await getMovieVideos(this.id);
+      const { code, data } = await getMovieVideos(this.id);
       this.loading = false;
 
-      if (res.code === 200) {
-        this.movie = res.data.movie;
-        this.videos = res.data.videos;
+      if (code === 200) {
+        this.movie = data.movie;
+        this.videos = data.videos;
       }
     },
   },

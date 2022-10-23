@@ -143,10 +143,10 @@ export default {
       let params = this.user;
 
       this.submitLoading = true;
-      let res = await updateUserInfo(params);
+      const { code, data } = await updateUserInfo(params);
       this.submitLoading = false;
 
-      if (res.code === 200) {
+      if (code === 200) {
         this.$store.commit("user/SET_USER", Object.assign({}, this.user));
         this.$toast("更新成功");
       }

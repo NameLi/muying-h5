@@ -88,11 +88,11 @@ export default {
       if (this.loading) return;
 
       this.loading = true;
-      let res = await getCaptcha();
+      const { code, data } = await getCaptcha();
       this.loading = false;
 
-      if (res.code === 200) {
-        this.captche = res.data;
+      if (code === 200) {
+        this.captche = data;
       }
     },
 

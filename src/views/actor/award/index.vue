@@ -37,11 +37,11 @@ export default {
   methods: {
     async getActorAwards() {
       this.loading = true;
-      let res = await getActorAwards(this.id);
+      const { code, data } = await getActorAwards(this.id);
       this.loading = false;
 
-      if (res.code === 200) {
-        this.awards = res.data;
+      if (code === 200) {
+        this.awards = data;
       }
     },
   },

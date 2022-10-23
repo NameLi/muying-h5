@@ -28,7 +28,7 @@ const actions = {
   async register({ commit }, form) {
     const { account, password, code } = form
 
-    let res = await register({ account, password, code })
+    const res = await register({ account, password, code })
 
     if (res.code === 200) {
       commit('SET_TOKEN', res.data.token)
@@ -40,7 +40,7 @@ const actions = {
   async login({ commit }, form) {
     const { account, password } = form
 
-    let res = await getUserToken({ account, password })
+    const res = await getUserToken({ account, password })
 
     if (res.code === 200) {
       commit('SET_TOKEN', res.data.token)

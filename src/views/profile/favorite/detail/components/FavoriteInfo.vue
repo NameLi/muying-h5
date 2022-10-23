@@ -93,10 +93,10 @@ export default {
           asyncClose: true,
         });
 
-        let res = await deleteUserFavorite(this.id);
+        const { code, data } = await deleteUserFavorite(this.id);
         instance.loading = false;
 
-        if (res.code === 200) {
+        if (code === 200) {
           this.$message({
             content: "删除成功！",
             type: "success",

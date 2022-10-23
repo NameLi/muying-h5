@@ -122,10 +122,10 @@ export default {
     async handleInsertImg(file) {
       this.uploading = true;
 
-      let res = await getQiniuUpToken();
+      const { code, data } = await getQiniuUpToken();
 
-      if (res.code === 200) {
-        const token = res.data;
+      if (code === 200) {
+        const token = data;
         const key = null;
         const putExtra = {
           fname: "",
@@ -147,8 +147,8 @@ export default {
             this.uploading = false;
           },
 
-          complete: (res) => {
-            let url = `${FILE_DOMAIN}/${res.key}@avatar`;
+          complete: ({ key }) => {
+            let url = `${FILE_DOMAIN}/${key}@avatar`;
             this.isShowAvatar = false;
 
             this.uploading = false;

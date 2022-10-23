@@ -76,11 +76,11 @@ export default {
   methods: {
     async getUserCollectionCount() {
       this.countLoading = true;
-      const res = await getUserCollectionCount();
+      const { code, data } = await getUserCollectionCount();
       this.countLoading = false;
 
-      if (res.code === 200) {
-        this.count = res.data;
+      if (code === 200) {
+        this.count = data;
       }
     },
   },

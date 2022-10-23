@@ -52,11 +52,11 @@ export default {
   methods: {
     async getAward() {
       this.loading = true;
-      let res = await getAward(this.name);
+      const { code, data } = await getAward(this.name);
       this.loading = false;
 
-      if (res.code === 200) {
-        this.award = res.data;
+      if (code === 200) {
+        this.award = data;
       }
     },
 

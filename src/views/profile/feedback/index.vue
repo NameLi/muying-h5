@@ -65,11 +65,11 @@ export default {
       };
 
       this.submitLoading = true;
-      let res = await createFeedback(params);
+      const { code, data, message } = await createFeedback(params);
       this.submitLoading = false;
 
-      if (res.code === 200) {
-        this.$toast(res.message);
+      if (code === 200) {
+        this.$toast(message);
         this.isFeedback = true;
       }
     },

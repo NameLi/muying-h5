@@ -40,11 +40,11 @@ export default {
   methods: {
     async getSerialMovies() {
       this.loading = true;
-      let res = await getSerialMovies(this.id);
+      const { code, data } = await getSerialMovies(this.id);
       this.loading = false;
 
-      if (res.code === 200) {
-        this.serial = res.data;
+      if (code === 200) {
+        this.serial = data;
       }
     },
   },

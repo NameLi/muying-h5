@@ -107,12 +107,12 @@ export default {
       });
 
       this.loading = true;
-      let res = await updateUserFavorite(this.id, this.form);
+      const { code, data } = await updateUserFavorite(this.id, this.form);
       this.loading = false;
 
       toast.close();
 
-      if (res.code === 200) {
+      if (code === 200) {
         this.$emit("on-change", this.form);
 
         this.$toast({
@@ -191,7 +191,7 @@ export default {
           color: rgb(197, 197, 197);
         }
         .content {
-          outline:none;
+          outline: none;
           min-height: 92px;
           line-height: 1.5;
           border-bottom: 1px solid #e5e5e5;

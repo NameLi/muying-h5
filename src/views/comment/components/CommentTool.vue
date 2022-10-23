@@ -66,6 +66,7 @@ export default {
       if (type === "delete") {
         this.deleteComment(index);
       } else if (type === "report") {
+        this.visible = false;
         this.showReportModal();
       }
     },

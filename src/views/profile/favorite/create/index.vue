@@ -71,12 +71,12 @@ export default {
       });
 
       this.loading = true;
-      let res = await createUserFavorite(this.form);
+      const { code, data } = await createUserFavorite(this.form);
       this.loading = false;
 
       toast.close();
 
-      if (res.code === 200) {
+      if (code === 200) {
         this.$toast({
           position: "top",
           message: "创建成功",

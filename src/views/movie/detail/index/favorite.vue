@@ -88,11 +88,11 @@ export default {
       };
 
       this.loading = true;
-      let res = await getUserFavorites(params);
+      const { code, data } = await getUserFavorites(params);
       this.loading = false;
 
-      if (res.code === 200) {
-        this.list = res.data;
+      if (code === 200) {
+        this.list = data;
       }
     },
 
@@ -105,16 +105,16 @@ export default {
       };
 
       this.submitLoading = true;
-      let res = await updateUserMovieFavorite(this.id, params);
+      const { code, data, message } = await updateUserMovieFavorite(this.id, params);
       this.submitLoading = false;
 
-      if (res.code === 200) {
+      if (code === 200) {
         this.$toast({
           position: "top",
-          message: res.message,
+          message,
         });
 
-        this.$emit("favorite-update", res.data);
+        this.$emit("favorite-update", data);
         this.$router.back();
       }
     },

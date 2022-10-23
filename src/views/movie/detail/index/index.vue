@@ -373,11 +373,10 @@ export default {
     // 获取影视信息
     async getMovie() {
       this.loading = true;
-      const res = await getMovie(this.id);
-      this.loading = false;
+      const { code, data } = await getMovie(this.id);
 
-      if (res.code === 200) {
-        let movie = res.data;
+      if (code === 200) {
+        let movie = data;
         movie.akas = movie.akas.join(" / ");
         movie.countries = movie.countries.join(" / ");
         movie.genres = movie.genres.join(" / ");
@@ -389,13 +388,17 @@ export default {
         this.$store.commit("SET_MOVIE", this.movie);
         document.title = movie.title;
       }
+
+      this.$nextTick(() => {
+        this.loading = false;
+      });
     },
 
     async wishChange() {
       if (this.wishLoading) return;
 
       this.wishLoading = true;
-      let { code, data, message } = await userMovieWish(this.id);
+      const { code, data, message } = await userMovieWish(this.id);
       this.wishLoading = false;
 
       if (code === 200) {

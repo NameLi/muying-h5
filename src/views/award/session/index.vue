@@ -76,11 +76,11 @@ export default {
   methods: {
     async getAwardSession() {
       this.loading = true;
-      let res = await getAwardSession(this.name, this.session);
+      const { code, data } = await getAwardSession(this.name, this.session);
       this.loading = false;
 
-      if (res.code === 200) {
-        this.award = res.data;
+      if (code === 200) {
+        this.award = data;
       }
     },
   },

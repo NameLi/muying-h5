@@ -100,12 +100,12 @@ export default {
       });
 
       this.loading = true;
-      let res = await createUserMovieRating(this.id, this.form);
+      const { code, data, message } = await createUserMovieRating(this.id, this.form);
       this.loading = false;
 
       toast.close();
 
-      if (res.code === 200) {
+      if (code === 200) {
         this.$toast({
           position: "top",
           message: "发布成功",
@@ -115,7 +115,7 @@ export default {
 
         this.$router.back();
       } else {
-        this.$toast(res.message);
+        this.$toast(message);
       }
     },
   },

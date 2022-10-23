@@ -108,11 +108,11 @@ export default {
   methods: {
     async getReview() {
       this.loading = true;
-      let res = await getReview(this.id);
+      const { code, data } = await getReview(this.id);
       this.loading = false;
 
-      if (res.code === 200) {
-        this.review = res.data;
+      if (code === 200) {
+        this.review = data;
       }
     },
   },

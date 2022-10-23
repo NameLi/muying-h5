@@ -110,11 +110,11 @@ export default {
     // 视频详情
     async getVideo() {
       this.loading = true;
-      let res = await getVideo(this.id);
+      const { code, data } = await getVideo(this.id);
       this.loading = false;
 
-      if (res.code === 200) {
-        this.video = res.data;
+      if (code === 200) {
+        this.video = data;
 
         this.$nextTick(() => {
           this.$refs.video.play();
@@ -125,12 +125,12 @@ export default {
     // 关联视频
     async getMovieVideos() {
       this.movieLoading = true;
-      let res = await getMovieVideos(1197950);
+      const { code, data } = await getMovieVideos(1197950);
       this.movieLoading = false;
 
-      if (res.code === 200) {
-        this.movie = res.data.movie;
-        this.videos = res.data.videos;
+      if (code === 200) {
+        this.movie = data.movie;
+        this.videos = data.videos;
       }
     },
 
@@ -166,7 +166,7 @@ export default {
       background-color: #fff;
       white-space: nowrap;
       overflow: auto;
-      -webkit-overflow-scrolling: touch; 
+      -webkit-overflow-scrolling: touch;
       .menu-item {
         flex-shrink: 0;
         margin-right: 20px;

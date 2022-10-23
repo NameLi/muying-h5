@@ -41,11 +41,11 @@ export default {
   methods: {
     async getMovieCast() {
       this.loading = true;
-      let res = await getMovieCast(this.id);
+      const { code, data } = await getMovieCast(this.id);
       this.loading = false;
 
-      if (res.code === 200) {
-        this.cast = res.data;
+      if (code === 200) {
+        this.cast = data;
       }
     },
   },

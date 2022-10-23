@@ -93,13 +93,13 @@ export default {
   methods: {
     async getArticle() {
       this.loading = true;
-      let res = await getArticle(this.id);
+      const { code, data } = await getArticle(this.id);
       this.loading = false;
 
-      if (res.code === 200) {
-        this.article = res.data;
+      if (code === 200) {
+        this.article = data;
 
-        document.title = res.data.title;
+        document.title = data.title;
       }
     },
 

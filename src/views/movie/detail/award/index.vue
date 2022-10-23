@@ -21,7 +21,7 @@ export default {
     AwardItem,
   },
 
-  props: ['id'],
+  props: ["id"],
 
   data() {
     return {
@@ -37,11 +37,11 @@ export default {
   methods: {
     async getMovieAwards() {
       this.loading = true;
-      let res = await getMovieAwards(this.id);
+      const { code, data } = await getMovieAwards(this.id);
       this.loading = false;
 
-      if (res.code === 200) {
-        this.awards = res.data;
+      if (code === 200) {
+        this.awards = data;
       }
     },
   },

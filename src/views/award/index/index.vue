@@ -40,11 +40,11 @@ export default {
   methods: {
     async getAwards() {
       this.loading = true;
-      let res = await getAwards();
+      const { code, data } = await getAwards();
       this.loading = false;
 
-      if (res.code === 200) {
-        this.awards = res.data;
+      if (code === 200) {
+        this.awards = data;
       }
     },
 

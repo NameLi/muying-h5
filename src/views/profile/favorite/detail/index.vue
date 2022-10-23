@@ -101,11 +101,11 @@ export default {
 
     async getUserFavorite() {
       this.favoriteLoading = true;
-      let res = await getUserFavorite(this.id);
+      const { code, data } = await getUserFavorite(this.id);
       this.favoriteLoading = false;
 
-      if (res.code === 200) {
-        this.favorite = res.data;
+      if (code === 200) {
+        this.favorite = data;
       }
     },
 
@@ -118,11 +118,11 @@ export default {
     async handleClickItem(index) {
       if (index === 0) {
         this.actions[0].loading = true;
-        let res = await deleteUserFavoriteMovies(this.id, this.movie.union_id);
+        const { code, data, message } = await deleteUserFavoriteMovies(this.id, this.movie.union_id);
         this.actions[0].loading = false;
 
-        if (res.code === 200) {
-          this.$toast(res.message);
+        if (code === 200) {
+          this.$toast(message);
 
           const index = this.list.findIndex(
             (m) => m.union_id === this.movie.union_id

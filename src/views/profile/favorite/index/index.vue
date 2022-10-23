@@ -79,11 +79,11 @@ export default {
 
     async getUserFavorites() {
       this.loading = true;
-      let res = await getUserFavorites();
+      const { code, data } = await getUserFavorites();
       this.loading = false;
 
-      if (res.code === 200) {
-        this.list = res.data;
+      if (code === 200) {
+        this.list = data;
       }
     },
   },

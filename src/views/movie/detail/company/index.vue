@@ -42,11 +42,11 @@ export default {
   methods: {
     async getMovieCompanies() {
       this.loading = true;
-      let res = await getMovieCompanies(this.id);
+      const { code, data } = await getMovieCompanies(this.id);
       this.loading = false;
 
-      if (res.code === 200) {
-        this.list = res.data;
+      if (code === 200) {
+        this.list = data;
       }
     },
   },
